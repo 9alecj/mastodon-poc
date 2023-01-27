@@ -1,25 +1,26 @@
 <template>
     <div class="container">
-        <StatusDisplayCards :posts=postList></StatusDisplayCards>
+        <LinkDisplayCards :links=links></LinkDisplayCards>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
-import StatusDisplayCards from './StatusDisplayCards.vue';
+import LinkDisplayCards from './LinkDisplayCards.vue';
+
 
 export default {
-    name: "trending-statuses",
+    name: "trending-links",
     data() {
         return {
-            postList: "",
+            links: "",
         };
     },
     methods: {
         getData() {
-            axios.get("/trending-statuses")
+            axios.get("/trending-links")
                 .then((res) => {
-                    this.postList = res.data;
+                    this.links = res.data;
                 })
                 .catch((error) => {
                     console.error(error);
@@ -29,6 +30,6 @@ export default {
     created() {
         this.getData();
     },
-    components: { StatusDisplayCards }
+    components: { LinkDisplayCards }
 };
 </script>

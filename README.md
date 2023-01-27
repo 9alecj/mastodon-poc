@@ -1,1 +1,1 @@
-# fastapi-vue
+# Mastodon PoC app
