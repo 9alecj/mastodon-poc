@@ -1,13 +1,14 @@
 <template>
     <div class="container">
-        <LinkDisplayCards :links=links></LinkDisplayCards>
+        <div class="row" data-masonry='{"percentPosition": true }'>
+            <LinkDisplayCard v-for="link in links" :key="link.url" :link=link></LinkDisplayCard>
+        </div>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
-import LinkDisplayCards from './LinkDisplayCards.vue';
-
+import LinkDisplayCard from './cards/LinkDisplayCard.vue';
 
 export default {
     name: "trending-links",
@@ -30,6 +31,6 @@ export default {
     created() {
         this.getData();
     },
-    components: { LinkDisplayCards }
+    components: { LinkDisplayCard }
 };
 </script>

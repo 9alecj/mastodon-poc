@@ -8,14 +8,16 @@
             </template>
         </div>
         <div v-if=posts>
-            <StatusDisplayCards :posts=posts></StatusDisplayCards>
+            <div class="row" data-masonry='{"percentPosition": true }'>
+                <StatusDisplayCard v-for="post in posts" :key="post.id" :post="post"></StatusDisplayCard>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
-import StatusDisplayCards from './StatusDisplayCards.vue';
+import StatusDisplayCard from './cards/StatusDisplayCard.vue';
 
 export default {
     name: "trending-tags",
@@ -51,7 +53,7 @@ export default {
     created() {
         this.getData();
     },
-    components: { StatusDisplayCards }
+    components: { StatusDisplayCard }
 };
 </script>
 

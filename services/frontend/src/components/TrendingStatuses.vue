@@ -1,12 +1,14 @@
 <template>
     <div class="container">
-        <StatusDisplayCards :posts=posts></StatusDisplayCards>
+        <div class="row" data-masonry='{"percentPosition": true }'>
+            <StatusDisplayCard v-for="post in posts" :key="post.id" :post="post"></StatusDisplayCard>
+        </div>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
-import StatusDisplayCards from './StatusDisplayCards.vue';
+import StatusDisplayCard from './cards/StatusDisplayCard.vue';
 
 export default {
     name: "trending-statuses",
@@ -29,6 +31,6 @@ export default {
     created() {
         this.getData();
     },
-    components: { StatusDisplayCards }
+    components: { StatusDisplayCard }
 };
 </script>
