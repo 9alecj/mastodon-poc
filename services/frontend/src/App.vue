@@ -1,23 +1,23 @@
 <template>
   <div id="app">
-    <nav>
-      <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/public">Public</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/trending-statuses">Trending</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/trending-links">Trending Links</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/trends">Trends</a>
-        </li>
-      </ul>
+    <nav class="navbar sticky-top navbar-light navbar-expand-lg"> <button class="navbar-toggler" type="button"
+        data-toggle="collapse" data-target="#collapsibleNavbar"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse d-flex justify-content-center" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Public</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/trending-statuses">Trending</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/trending-links">Trending Links</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/trends">Trends</a>
+          </li>
+        </ul>
+      </div>
     </nav>
     <router-view />
   </div>
@@ -26,15 +26,21 @@
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  background: #e2e1e0;
 }
 
-.navbar {
-  /* What the docs use */
-  --bs-navbar-padding-x: 0.5rem;
+nav {
+    background: #7e57c2
+}
+
+.nav-link {
+    font-size: 1.2em;
+    color: #ffffff !important;
+    font-weight: 500
+}
+
+.active .nav-link {
+    border-bottom: 1px solid #4dd0e1;
+    color: #000000 !important
 }
 </style>

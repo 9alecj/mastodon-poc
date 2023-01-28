@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1 class="display-3">Latest Public Statuses</h1>
     <PublicTimeline/>
   </div>
 </template>

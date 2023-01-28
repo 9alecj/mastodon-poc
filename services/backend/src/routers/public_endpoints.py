@@ -18,8 +18,6 @@ get_tag_url = "https://mastodon.social/api/v1/timelines/tag/"
 
 @router.get("/public", tags=["public"])
 async def get_public_timeline(tag: Optional[str] = None):
-
-    print("tag: " + tag)
     url = ""
     if tag:
         url = get_tag_url + tag

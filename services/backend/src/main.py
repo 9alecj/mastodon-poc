@@ -1,9 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware  # NEW
 import httpx
-import asyncio
 from src.routers import public_endpoints
-import json
+
 
 public_GET_URL = "https://mastodon.social/api/v1/timelines/public?limit=1"
 
@@ -25,3 +24,7 @@ def home():
     response = httpx.get(public_GET_URL)
     print(response)
     return response.json()
+
+@app.get("/")
+async def read_main():
+    return {"msg": "Hello World"}

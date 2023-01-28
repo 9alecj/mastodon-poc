@@ -1,5 +1,6 @@
 <template>
     <div>
+      <h1 class="display-3">Trending Statuses</h1>
       <TrendingStatuses/>
     </div>
   </template>

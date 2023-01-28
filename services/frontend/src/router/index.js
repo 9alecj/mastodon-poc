@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 import PublicTimelineView from '../views/PublicTimelineView.vue'
 import TrendingStatusesView from '../views/TrendingStatusesView.vue'
 import TrendingLinksView from '../views/TrendingLinksView.vue'
@@ -9,11 +8,6 @@ import TrendingTagsView from '../views/TrendingTagsView.vue'
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/public',
     name: 'public',
     component:PublicTimelineView
   },

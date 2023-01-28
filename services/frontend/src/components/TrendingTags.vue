@@ -1,16 +1,15 @@
 <template>
     <div class="container">
-        <h1>Trending Tags</h1>
-        <ul class="nav justify-content-center">
+        <div class="d-grid gap-2 d-md-flex justify-content-center">
             <template v-for="trend in trends" :key="trend.name">
-                <li class="nav-item">
-                    <a class="nav-link" @click="updateStatuses(trend.name)">{{trend.name}}</a>
-                </li>
+                <button class="btn btn-secondary" @click="updateStatuses(trend.name)" type="button">{{
+                    trend.name
+                }}</button>
             </template>
-            <div v-if=posts>
-                <StatusDisplayCards :posts=posts></StatusDisplayCards>
-            </div>
-        </ul>
+        </div>
+        <div v-if=posts>
+            <StatusDisplayCards :posts=posts></StatusDisplayCards>
+        </div>
     </div>
 </template>
 
@@ -27,15 +26,15 @@ export default {
         };
     },
     methods: {
-        updateStatuses(tag){
-            if(tag){
-                axios.get("/public", {params: {tag:tag}})
-                .then((res) => {
-                    this.posts = res.data
-                })
-                .catch((error) => {
-                    console.error(error);
-                });
+        updateStatuses(tag) {
+            if (tag) {
+                axios.get("/public", { params: { tag: tag } })
+                    .then((res) => {
+                        this.posts = res.data
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
             }
         },
         getData() {
@@ -55,3 +54,7 @@ export default {
     components: { StatusDisplayCards }
 };
 </script>
+
+<style>
+
+</style>
