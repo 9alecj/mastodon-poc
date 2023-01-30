@@ -19,12 +19,6 @@ app.add_middleware(
 
 app.include_router(public_endpoints.router)
 
-@app.get("/test")
-def home():
-    response = httpx.get(public_GET_URL)
-    print(response)
-    return response.json()
-
 @app.get("/")
 async def read_main():
     return {"msg": "Hello World"}

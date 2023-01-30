@@ -25,22 +25,17 @@
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   text-align: center;
 }
 
 nav {
-    background: #7e57c2
+    background: #755BB9
 }
 
 .nav-link {
-    font-size: 1.2em;
+    font-size: 1em;
     color: #ffffff !important;
     font-weight: 500
-}
-
-.active .nav-link {
-    border-bottom: 1px solid #4dd0e1;
-    color: #000000 !important
 }
 </style>

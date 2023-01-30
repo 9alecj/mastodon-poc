@@ -17,7 +17,7 @@ export default {
     },
     methods: {
         getData() {
-            axios.get("/public")
+            axios.get("/timelines")
                 .then((res) => {
                 this.postList = res.data;
             })

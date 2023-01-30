@@ -21,6 +21,11 @@ export default {
         getData() {
             axios.get("/trending-statuses")
                 .then((res) => {
+                    res.data.sort(function(a,b){
+                        var valA = (a.media === null ? .5 : 2) * a.content.length
+                        var valB = (b.media === null ? .5 : 2) * b.content.length
+                        return valB - valA;
+                    });
                     this.posts = res.data;
                 })
                 .catch((error) => {
