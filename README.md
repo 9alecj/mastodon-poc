@@ -1,5 +1,5 @@
 # Mastodon PoC app
-This app is built to give a basic gui to some of the Mastodon APIs. At the moment it only supports the public APIs, though proper login flows and corresponding API usage is planned. 
+This app is built to give a basic GUI to some of the Mastodon APIs. At the moment it only supports the public APIs, though proper login flows and corresponding API usage is planned. 
 
 ## What is this app about?
 I'm building this app because I think Mastodon is neat and I want to learn more about languages, libraries and frameworks I haven't used or don't use often. 
@@ -8,7 +8,7 @@ On a related note this project uses Python (which I have never used for anything
 
 Right now the app uses only the public Mastodon API due to issues with getting a proper Application API key due to traffic increases at Mastodon.
 
-## What API does this use?
+## What APIs does this use?
 The two main APIs in use are:
 1. https://docs.joinmastodon.org/methods/timelines/
 2. https://docs.joinmastodon.org/methods/trends/
