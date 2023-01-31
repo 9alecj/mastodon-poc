@@ -30,12 +30,12 @@
 }
 
 nav {
-    background: #755BB9
+  background: #755BB9
 }
 
 .nav-link {
-    font-size: 1em;
-    color: #ffffff !important;
-    font-weight: 500
+  font-size: 1em;
+  color: #ffffff !important;
+  font-weight: 500
 }
 </style>

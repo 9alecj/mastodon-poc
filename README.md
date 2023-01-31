@@ -22,3 +22,7 @@ You'll need the following setup to run this locally:
 ## What is this "samples" folder?
 The samples folder contains a python file "test.py" which I use to get sample responses from the Mastodon APIs I'm using. I find having sample responses helps build out the data models more easily and this way I can sanity check the API request before building out a whole flow.
 
+## Tips
+Once you get it running with docker-compose the frontend can be reached at http://localhost:8080/ and you can see the OpenAPI docs at http://localhost:5000/docs
+
+Sometimes the Mastodon API is slow to respond or times out, I haven't implemented a retry system yet so you'll have to refresh manually if the request hangs.

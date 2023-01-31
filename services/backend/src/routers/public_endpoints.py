@@ -5,21 +5,26 @@ from ..services import trends_service
 
 router = APIRouter()
 
+
 @router.get("/timelines", tags=["public"])
 async def get_public_timeline():
     return await timelines_service.fetch_timeline()
+
 
 @router.get("/timelines/tag", tags=["public"])
 async def get_public_timeline_by_tag(tag: str):
     return await timelines_service.fetch_timeline_by_tag(tag)
 
+
 @router.get("/trending-statuses", tags=["public"])
 async def get_trending_statuses():
     return await trends_service.fetch_trending_statuses()
 
+
 @router.get("/trending-links", tags=["public"])
 async def get_trending_links():
     return await trends_service.fetch_trending_links()
+
 
 @router.get("/trends", tags=["public"])
 async def get_trends():

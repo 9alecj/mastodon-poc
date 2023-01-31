@@ -5,15 +5,15 @@ from ...utilities.posts_parser import Post
 def expected_posts_success():
     sample_post_data = []
     sample_post_data.append(Post(
-                                profile_photo="https://files.mastodon.social/accounts/avatars/001/021/813/original/feeb19e419f0e3c4.jpg",
-                                id="109761844504564708",
-                                username="Some_Emo_Chick",
-                                content="<p>The Onion never misses</p>",
-                                media="https://files.mastodon.social/media_attachments/files/109/761/841/472/834/189/original/b79eebc4402ae01b.png",
-                                post_time="2023-01-27T15:20:32.415Z",
-                                replies_count=12,
-                                reblogs_count=753,
-                                favourites_count=1111))
+        profile_photo="https://files.mastodon.social/accounts/avatars/001/021/813/original/feeb19e419f0e3c4.jpg",
+        id="109761844504564708",
+        username="Some_Emo_Chick",
+        content="<p>The Onion never misses</p>",
+        media="https://files.mastodon.social/media_attachments/files/109/761/841/472/834/189/original/b79eebc4402ae01b.png",
+        post_time="2023-01-27T15:20:32.415Z",
+        replies_count=12,
+        reblogs_count=753,
+        favourites_count=1111))
     sample_post_data.append(Post(
                             profile_photo="https://files.mastodon.social/accounts/avatars/000/276/336/original/a2fc430ff065be26.jpg",
                             id="109762190140654574",
@@ -25,6 +25,7 @@ def expected_posts_success():
                             reblogs_count=320,
                             favourites_count=432))
     return sample_post_data
+
 
 def sample_posts_json_success():
     return [
@@ -81,7 +82,7 @@ def sample_posts_json_success():
                             "name": "Tumblr",
                             "value": "<a href=\"https://someemochick.tumblr.com/\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\"><span class=\"invisible\">https://</span><span class=\"\">someemochick.tumblr.com/</span><span class=\"invisible\"></span></a>",
                             "verified_at": "2022-08-10T20:58:25.835+00:00"
-                        }
+                    }
                 ]
             },
             "media_attachments": [
@@ -105,11 +106,11 @@ def sample_posts_json_success():
                                 "height": 433,
                                 "size": "532x433",
                                 "aspect": 1.2286374133949192
-                        },
+                                },
                         "focus": {
                                 "x": 0.0,
                                 "y": 0.0
-                        }
+                                }
                     },
                     "description": "Satire headline: Police urge calm in light of unspeakable evil they did",
                     "blurhash": "UARypZ9F~qofNZxu%Mj[.8%M%May9FWB?IWB"
@@ -174,17 +175,17 @@ def sample_posts_json_success():
                             "name": "books",
                             "value": "<a href=\"https://www.amazon.com/kindle-dbs/entity/author/B007Z8R8NM\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\"><span class=\"invisible\">https://www.</span><span class=\"ellipsis\">amazon.com/kindle-dbs/entity/a</span><span class=\"invisible\">uthor/B007Z8R8NM</span></a>",
                             "verified_at": None
-                        },
+                    },
                     {
                             "name": "games",
                             "value": "<a href=\"https://drlizzardo.itch.io/\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\"><span class=\"invisible\">https://</span><span class=\"\">drlizzardo.itch.io/</span><span class=\"invisible\"></span></a>",
                             "verified_at": None
-                        },
+                    },
                     {
                             "name": "poetry",
                             "value": "<a href=\"https://bookmaniac.org/poetry/\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\"><span class=\"invisible\">https://</span><span class=\"\">bookmaniac.org/poetry/</span><span class=\"invisible\"></span></a>",
                             "verified_at": None
-                        }
+                    }
                 ]
             },
             "media_attachments": [
@@ -208,11 +209,11 @@ def sample_posts_json_success():
                                 "height": 562,
                                 "size": "410x562",
                                 "aspect": 0.7295373665480427
-                        },
+                                },
                         "focus": {
                                 "x": 0.0,
                                 "y": 0.0
-                        }
+                                }
                     },
                     "description": "screencap of a tweet from jan 27, 2020 by the san miguel sheriff with a photo of a rock in the middle of a snowy road. Text reads \"Large boulder the size of a small boulder is completely blocking east-bound lane Highway 145 mm78 at Silverpick Rd. Please use caution and watch for emergency vehicles in the area.",
                     "blurhash": "USN1Ab%MWARj~qRjofof?bIUayWBofRjWBof"
@@ -280,7 +281,7 @@ def sample_posts_json_fail():
                             "name": "Tumblr",
                             "value": "<a href=\"https://someemochick.tumblr.com/\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\"><span class=\"invisible\">https://</span><span class=\"\">someemochick.tumblr.com/</span><span class=\"invisible\"></span></a>",
                             "verified_at": "2022-08-10T20:58:25.835+00:00"
-                        }
+                    }
                 ]
             },
             "media_attachments": [
@@ -304,11 +305,11 @@ def sample_posts_json_fail():
                                 "height": 433,
                                 "size": "532x433",
                                 "aspect": 1.2286374133949192
-                        },
+                                },
                         "focus": {
                                 "x": 0.0,
                                 "y": 0.0
-                        }
+                                }
                     },
                     "description": "Satire headline: Police urge calm in light of unspeakable evil they did",
                     "blurhash": "UARypZ9F~qofNZxu%Mj[.8%M%May9FWB?IWB"
@@ -373,17 +374,17 @@ def sample_posts_json_fail():
                             "name": "books",
                             "value": "<a href=\"https://www.amazon.com/kindle-dbs/entity/author/B007Z8R8NM\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\"><span class=\"invisible\">https://www.</span><span class=\"ellipsis\">amazon.com/kindle-dbs/entity/a</span><span class=\"invisible\">uthor/B007Z8R8NM</span></a>",
                             "verified_at": None
-                        },
+                    },
                     {
                             "name": "games",
                             "value": "<a href=\"https://drlizzardo.itch.io/\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\"><span class=\"invisible\">https://</span><span class=\"\">drlizzardo.itch.io/</span><span class=\"invisible\"></span></a>",
                             "verified_at": None
-                        },
+                    },
                     {
                             "name": "poetry",
                             "value": "<a href=\"https://bookmaniac.org/poetry/\" target=\"_blank\" rel=\"nofollow noopener noreferrer me\"><span class=\"invisible\">https://</span><span class=\"\">bookmaniac.org/poetry/</span><span class=\"invisible\"></span></a>",
                             "verified_at": None
-                        }
+                    }
                 ]
             },
             "media_attachments": [
@@ -407,11 +408,11 @@ def sample_posts_json_fail():
                                 "height": 562,
                                 "size": "410x562",
                                 "aspect": 0.7295373665480427
-                        },
+                                },
                         "focus": {
                                 "x": 0.0,
                                 "y": 0.0
-                        }
+                                }
                     },
                     "description": "screencap of a tweet from jan 27, 2020 by the san miguel sheriff with a photo of a rock in the middle of a snowy road. Text reads \"Large boulder the size of a small boulder is completely blocking east-bound lane Highway 145 mm78 at Silverpick Rd. Please use caution and watch for emergency vehicles in the area.",
                     "blurhash": "USN1Ab%MWARj~qRjofof?bIUayWBofRjWBof"

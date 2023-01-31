@@ -1,13 +1,9 @@
 <template>
     <div class="container">
         <h1 class="display-3">Trending Statuses</h1>
-
-        <!-- <div class="row" data-masonry='{"percentPosition": true }'> -->
-        <masonry   :cols="{default: 3, 1400: 2, 1000: 1}"
-                   :gutter="{default: '30px'}">
+        <masonry :cols="{ default: 3, 1400: 2, 1000: 1 }" :gutter="{ default: '30px' }">
             <StatusDisplayCard v-for="post in posts" :key="post.id" :post="post"></StatusDisplayCard>
         </masonry>
-        <!-- </div> -->
     </div>
 </template>
 

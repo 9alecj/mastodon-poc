@@ -10,8 +10,7 @@
         </div>
         <div v-if=posts>
             <h1 class="display-6">#{{ tag }}</h1>
-            <masonry   :cols="{default: 3, 1400: 2, 1000: 1}"
-                       :gutter="{default: '30px'}">
+            <masonry :cols="{ default: 3, 1400: 2, 1000: 1 }" :gutter="{ default: '30px' }">
                 <StatusDisplayCard v-for="post in posts" :key="post.id" :post="post"></StatusDisplayCard>
             </masonry>
         </div>

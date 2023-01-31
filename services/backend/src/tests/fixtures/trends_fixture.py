@@ -1,5 +1,6 @@
 import pytest
 
+
 def sample_trends_json_success():
     return [
         {
@@ -85,6 +86,7 @@ def sample_trends_json_success():
             ]
         }
     ]
+
 
 def sample_trends_json_fail():
     return [

@@ -9,22 +9,22 @@ const routes = [
   {
     path: '/',
     name: 'public',
-    component:PublicTimelineView
+    component: PublicTimelineView
   },
   {
     path: '/trending-statuses',
     name: 'trending-statuses',
-    component:TrendingStatusesView
+    component: TrendingStatusesView
   },
   {
     path: '/trending-links',
     name: 'trending-links',
-    component:TrendingLinksView
+    component: TrendingLinksView
   },
   {
     path: '/trends',
     name: 'trending-tags',
-    component:TrendingTagsView
+    component: TrendingTagsView
   }
 ]
 

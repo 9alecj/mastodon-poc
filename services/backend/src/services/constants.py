@@ -1,4 +1,4 @@
-#this module defines constants for the services
+# this module defines constants for the services
 
 GET_PUBLIC_TIMELINE_URL = "https://mastodon.social/api/v1/timelines/public?limit=30"
 GET_TRENDING_LINKS_URL = "https://mastodon.social/api/v1/trends/links?limit=30"
