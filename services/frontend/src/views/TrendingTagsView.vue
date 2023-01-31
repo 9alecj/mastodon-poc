@@ -1,7 +1,6 @@
 <template>
-    <div>
-      <h1 class="display-3">Trending Tags</h1>
-      <div class="container">
+    <div class="container">
+        <h1 class="display-3">Trending Tags</h1>
         <div class="d-grid gap-2 d-md-flex justify-content-center">
             <template v-for="tag in tags" :key="tag.name">
                 <button class="btn btn-secondary" @click="updateStatuses(tag.name)" type="button">#{{
@@ -10,24 +9,24 @@
             </template>
         </div>
         <div v-if=posts>
-            <h1 class="display-6">#{{tag}}</h1>
-            <div class="row" data-masonry='{"percentPosition": true }'>
+            <h1 class="display-6">#{{ tag }}</h1>
+            <masonry   :cols="{default: 3, 1400: 2, 1000: 1}"
+                       :gutter="{default: '30px'}">
                 <StatusDisplayCard v-for="post in posts" :key="post.id" :post="post"></StatusDisplayCard>
-            </div>
+            </masonry>
         </div>
-      </div>
     </div>
-  </template>
-  
-  <script>
+</template>
+
+<script>
 import axios from 'axios';
 import StatusDisplayCard from '@/components/cards/StatusDisplayCard.vue';
-  
-  export default {
+
+export default {
     name: 'TrendingTagsView',
     data() {
         return {
-            tag:"",
+            tag: "",
             tags: "",
             posts: ""
         };
@@ -47,11 +46,11 @@ import StatusDisplayCard from '@/components/cards/StatusDisplayCard.vue';
                 axios.get("/timelines/tag", { params: { tag: tag } })
                     .then((res) => {
                         this.tag = tag;
-                        res.data.sort(function(a,b){
-                        var valA = (a.media === null ? .5 : 2) * a.content.length
-                        var valB = (b.media === null ? .5 : 2) * b.content.length
-                        return valB - valA;
-                    });
+                        res.data.sort(function (a, b) {
+                            var valA = (a.media === null ? .5 : 2) * a.content.length
+                            var valB = (b.media === null ? .5 : 2) * b.content.length
+                            return valB - valA;
+                        });
                         this.posts = res.data;
                     })
                     .catch((error) => {
@@ -64,6 +63,5 @@ import StatusDisplayCard from '@/components/cards/StatusDisplayCard.vue';
         this.getData();
     },
     components: { StatusDisplayCard }
-  }
-  </script>
-  
+}
+</script>

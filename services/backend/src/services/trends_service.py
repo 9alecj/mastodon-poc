@@ -1,4 +1,4 @@
-from http.client import HTTPException
+from fastapi import HTTPException
 import json
 import httpx
 from ..utilities.links_parser import parse_links

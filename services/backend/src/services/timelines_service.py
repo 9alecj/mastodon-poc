@@ -19,7 +19,7 @@ async def fetch_timeline():
 
 async def fetch_timeline_by_tag(tag: str):
     try:
-        response = httpx.get(GET_TAG_URL + tag)
+        response = httpx.get(GET_TAG_URL + tag + "?limit=30")
     except Exception:
         raise HTTPException(status_code=500, detail="Error retrieving data from service")
     
