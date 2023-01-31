@@ -1,9 +1,6 @@
 import json
 import requests
 
-
-
-
 def get_sample_trending_links_data():
     response = requests.get("https://mastodon.social/api/v1/trends/links")
     response_object = json.loads(response.content)
@@ -16,8 +13,6 @@ def get_sample_trending_links_data():
 
     trending_links_sample_file.close()
 
-
-
 def get_sample_trending_statuses_data():
     response = requests.get("https://mastodon.social/api/v1/trends/statuses")
     response_object = json.loads(response.content)
@@ -29,8 +24,6 @@ def get_sample_trending_statuses_data():
         json.dump(response_object, f)
 
     trending_statuses_sample_file.close()
-
-
 
 def get_sample_timeline_data():
     response = requests.get("https://mastodon.social/api/v1/timelines/public?limit=10")
@@ -67,7 +60,6 @@ def get_sample_tags_data():
         json.dump(response_object, f)
 
     tags_sample_file.close()
-
 
 
 def main():
