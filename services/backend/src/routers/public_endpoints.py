@@ -7,11 +7,11 @@ from ..services import trends_service
 router = APIRouter()
 
 @router.get("/timelines", tags=["public"])
-async def get_public_timeline(tag: Optional[str] = None):
+async def get_public_timeline():
     return await timelines_service.fetch_timeline()
 
 @router.get("/timelines/tag", tags=["public"])
-async def get_public_timeline(tag: Optional[str] = None):
+async def get_public_timeline_by_tag(tag: str):
     return await timelines_service.fetch_timeline_by_tag(tag)
 
 @router.get("/trending-statuses", tags=["public"])

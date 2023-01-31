@@ -19,7 +19,7 @@ def parse_posts(posts):
         return data
     except Exception as e:
         print(e)
-        raise HTTPException(status_code=500, detail=e)
+        raise HTTPException(status_code=500, detail="error parsing data from service")
 
 
 class Post:

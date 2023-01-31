@@ -1,19 +1,69 @@
 <template>
     <div>
       <h1 class="display-3">Trending Tags</h1>
-      <TrendingTags/>
+      <div class="container">
+        <div class="d-grid gap-2 d-md-flex justify-content-center">
+            <template v-for="tag in tags" :key="tag.name">
+                <button class="btn btn-secondary" @click="updateStatuses(tag.name)" type="button">#{{
+                    tag.name
+                }}</button>
+            </template>
+        </div>
+        <div v-if=posts>
+            <h1 class="display-6">#{{tag}}</h1>
+            <div class="row" data-masonry='{"percentPosition": true }'>
+                <StatusDisplayCard v-for="post in posts" :key="post.id" :post="post"></StatusDisplayCard>
+            </div>
+        </div>
+      </div>
     </div>
   </template>
   
   <script>
-  // @ is an alias to /src
-import TrendingTags from '../components/TrendingTags.vue';
+import axios from 'axios';
+import StatusDisplayCard from '@/components/cards/StatusDisplayCard.vue';
   
   export default {
     name: 'TrendingTagsView',
-    components: {
-    TrendingTags
-}
+    data() {
+        return {
+            tag:"",
+            tags: "",
+            posts: ""
+        };
+    },
+    methods: {
+        getData() {
+            axios.get("/trends")
+                .then((res) => {
+                    this.tags = res.data;
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+        },
+        updateStatuses(tag) {
+            if (tag) {
+                axios.get("/timelines/tag", { params: { tag: tag } })
+                    .then((res) => {
+                        this.tag = tag;
+                        res.data.sort(function(a,b){
+                        var valA = (a.media === null ? .5 : 2) * a.content.length
+                        var valB = (b.media === null ? .5 : 2) * b.content.length
+                        return valB - valA;
+                    });
+                        this.posts = res.data;
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                    });
+            }
+        },
+    },
+    created() {
+        this.getData();
+    },
+    components: { StatusDisplayCard }
   }
   </script>
   

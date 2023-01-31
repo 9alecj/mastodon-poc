@@ -4,16 +4,16 @@
         data-toggle="collapse" data-target="#collapsibleNavbar"> <span class="navbar-toggler-icon"></span> </button>
       <div class="collapse navbar-collapse d-flex justify-content-center" id="collapsibleNavbar">
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <li class="nav-item px-3">
             <a class="nav-link" href="/">Public</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item px-3">
             <a class="nav-link" href="/trending-statuses">Trending</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item px-3">
             <a class="nav-link" href="/trending-links">Trending Links</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item px-3">
             <a class="nav-link" href="/trends">Trends</a>
           </li>
         </ul>
