@@ -1,6 +1,5 @@
 from fastapi import HTTPException
 import json
-from typing import Optional
 import httpx
 from .constants import GET_PUBLIC_TIMELINE_URL, GET_TAG_URL
 

@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware  # NEW
-import httpx
 from src.routers import public_endpoints
 
 
