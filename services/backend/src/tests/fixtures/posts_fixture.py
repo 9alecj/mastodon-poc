@@ -1,10 +1,10 @@
 import pytest
-from ...utilities.posts_parser import Post
+from src.viewmodels import PostViewModel
 
 
 def expected_posts_success():
     sample_post_data = []
-    sample_post_data.append(Post(
+    sample_post_data.append(PostViewModel(
         profile_photo="https://files.mastodon.social/accounts/avatars/001/021/813/original/feeb19e419f0e3c4.jpg",
         id="109761844504564708",
         username="Some_Emo_Chick",
@@ -14,7 +14,7 @@ def expected_posts_success():
         replies_count=12,
         reblogs_count=753,
         favourites_count=1111))
-    sample_post_data.append(Post(
+    sample_post_data.append(PostViewModel(
                             profile_photo="https://files.mastodon.social/accounts/avatars/000/276/336/original/a2fc430ff065be26.jpg",
                             id="109762190140654574",
                             username="lizzard",

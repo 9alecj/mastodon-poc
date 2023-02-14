@@ -1,5 +1,5 @@
 from .fixtures.posts_fixture import expected_posts_success, sample_posts_json_fail, sample_posts_json_success
-from ..utilities.posts_parser import parse_posts
+from src.utilities import PostsParser
 import pytest
 from fastapi import HTTPException
 
@@ -7,9 +7,10 @@ from fastapi import HTTPException
 def test_post_parser_success():
     # arrange
     expected = expected_posts_success()
+    posts_parser = PostsParser()
 
     # act
-    parsed_posts = parse_posts(sample_posts_json_success())
+    parsed_posts = posts_parser.parse(sample_posts_json_success())
 
     # assert
     for i in range(len(expected)):
@@ -17,5 +18,9 @@ def test_post_parser_success():
 
 
 def test_post_parser_fail():
+    # arrange 
+    posts_parser = PostsParser()
+
+    # assert
     with pytest.raises(HTTPException):
-        parse_posts(sample_posts_json_fail())
+        posts_parser.parse(sample_posts_json_fail())
