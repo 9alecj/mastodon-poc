@@ -20,7 +20,7 @@ export default {
     },
     methods: {
         getData() {
-            axios.get("/trending-statuses")
+            axios.get("/posts/trending")
                 .then((res) => {
                     this.posts = res.data;
                 })

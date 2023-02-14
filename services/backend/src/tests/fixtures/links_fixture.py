@@ -1,9 +1,9 @@
-from ...utilities.links_parser import Link
+from src.viewmodels import LinkViewModel
 
 
 def expected_links_success():
     sample_links_data = []
-    sample_links_data.append(Link(
+    sample_links_data.append(LinkViewModel(
         url="https://www.bloomberg.com/news/articles/2023-01-27/elon-musk-s-twitter-trust-safety-head-ella-irwin-breaks-rules-for-him",
         title="Twitter\u2019s Trust and Safety Head Ditches Protocol for Musk Whims",
         description="Ella Irwin is Musk\u2019s most faithful supporter, even when his impulses buck convention",
@@ -12,7 +12,7 @@ def expected_links_success():
         image="https://files.mastodon.social/cache/preview_cards/images/053/183/665/original/9f75b7cc707ab146.jpg",
         blurhash="UV8?g_adX=t8x^bIROjXa#fkoef5M{f6tRay")
     )
-    sample_links_data.append(Link(
+    sample_links_data.append(LinkViewModel(
         url="https://www.houstonchronicle.com/business/article/twitter-mastadon-elon-musk-apps-migration-17746197.php",
         title="As Twitter kills third-party apps, new life blooms on Mastodon",
         description="Developers who crafted now-defunct apps for Twitter can devote their attention to the network that\u2019s become the primary bird site refuge.",

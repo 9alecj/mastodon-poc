@@ -1,5 +1,5 @@
 from .fixtures.links_fixture import expected_links_success, sample_links_json_fail, sample_links_json_success
-from ..utilities.links_parser import parse_links
+from src.utilities import LinksParser
 import pytest
 from fastapi import HTTPException
 
@@ -7,9 +7,10 @@ from fastapi import HTTPException
 def test_link_parser_success():
     # arrange
     expected = expected_links_success()
+    links_parser = LinksParser()
 
     # act
-    parsed_links = parse_links(sample_links_json_success())
+    parsed_links = links_parser.parse(sample_links_json_success())
 
     # assert
     for i in range(len(expected)):
@@ -17,5 +18,9 @@ def test_link_parser_success():
 
 
 def test_link_parser_fail():
+    # arrange
+    links_parser = LinksParser()
+
+    # assert
     with pytest.raises(HTTPException):
-        parse_links(sample_links_json_fail())
+        links_parser.parse(sample_links_json_fail())

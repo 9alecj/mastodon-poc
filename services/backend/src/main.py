@@ -1,9 +1,6 @@
 from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware  # NEW
-from src.routers import public_endpoints
-
-
-public_GET_URL = "https://mastodon.social/api/v1/timelines/public?limit=1"
+from fastapi.middleware.cors import CORSMiddleware
+from src.routers import PostsRouter, TagsRouter , LinksRouter
 
 app = FastAPI()
 
@@ -16,7 +13,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(public_endpoints.router)
+posts_router = PostsRouter()
+links_router = LinksRouter()
+tags_router = TagsRouter()
+
+app.include_router(posts_router.router)
+app.include_router(links_router.router)
+app.include_router(tags_router.router)
 
 
 @app.get("/")
