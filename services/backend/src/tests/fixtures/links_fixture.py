@@ -1,4 +1,4 @@
-from ...utilities.links_parser import Link
+from ...utilities.link_parser import Link
 
 
 def expected_links_success():

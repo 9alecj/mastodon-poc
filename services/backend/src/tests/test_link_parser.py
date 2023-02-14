@@ -1,5 +1,5 @@
 from .fixtures.links_fixture import expected_links_success, sample_links_json_fail, sample_links_json_success
-from ..utilities.links_parser import parse_links
+from ..utilities.link_parser import parse_links
 import pytest
 from fastapi import HTTPException
 
