@@ -32,7 +32,7 @@ export default {
     },
     methods: {
         getData() {
-            axios.get("/trends")
+            axios.get("/tags")
                 .then((res) => {
                     this.tags = res.data;
                 })
@@ -42,7 +42,7 @@ export default {
         },
         updateStatuses(tag) {
             if (tag) {
-                axios.get("/timelines/tag", { params: { tag: tag } })
+                axios.get("/posts/tag", { params: { tag: tag } })
                     .then((res) => {
                         this.tag = tag;
                         res.data.sort(function (a, b) {

@@ -1,3 +1,3 @@
-from .links_parser import LinksParser
-from .trends_parser import TrendsParser
-from .posts_parser import PostsParser
+from .mastodon_links_parser import MastodonLinksParser
+from .mastodon_tags_parser import MastodonTagsParser
+from .mastodon_posts_parser import MastodonPostsParser

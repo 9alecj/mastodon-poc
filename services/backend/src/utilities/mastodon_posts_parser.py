@@ -1,8 +1,7 @@
 from fastapi import HTTPException
-from src.utilities.parse_interface import ParserInterface
 from src.viewmodels import PostViewModel
 
-class PostsParser():
+class MastodonPostsParser():
     def parse(self, posts):
         data = []
 

@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     getData() {
-      axios.get("/timelines")
+      axios.get("/posts")
         .then((res) => {
           this.posts = res.data;
         })

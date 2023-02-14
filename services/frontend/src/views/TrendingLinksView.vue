@@ -21,7 +21,7 @@ export default {
     },
     methods: {
         getData() {
-            axios.get("/trending-links")
+            axios.get("/links")
                 .then((res) => {
                     this.links = res.data;
                 })

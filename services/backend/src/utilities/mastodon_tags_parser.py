@@ -1,8 +1,7 @@
 from fastapi import HTTPException
-from src.utilities.parse_interface import ParserInterface
 from src.viewmodels import TrendViewModel
 
-class TrendsParser():
+class MastodonTagsParser():
     def parse(self, trends):
         data = []
         try:

@@ -1,8 +1,7 @@
 from fastapi import HTTPException
-from src.utilities.parse_interface import ParserInterface
 from src.viewmodels import LinkViewModel
 
-class LinksParser():
+class MastodonLinksParser():
     def parse(self, links):
         data = []
         try:

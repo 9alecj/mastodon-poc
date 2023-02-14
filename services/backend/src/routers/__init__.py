@@ -1,2 +1,3 @@
-from .timeline_router import TimelineRouter
-from .trends_router import TrendsRouter
+from .posts_router import PostsRouter
+from .links_router import LinksRouter
+from .tags_router import TagsRouter

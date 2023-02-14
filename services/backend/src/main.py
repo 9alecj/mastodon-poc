@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from src.routers import TimelineRouter, TrendsRouter
+from src.routers import PostsRouter, TagsRouter , LinksRouter
 
 app = FastAPI()
 
@@ -13,11 +13,13 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-timelineRouter = TimelineRouter()
-trendsRouter = TrendsRouter()
+posts_router = PostsRouter()
+links_router = LinksRouter()
+tags_router = TagsRouter()
 
-app.include_router(timelineRouter.router)
-app.include_router(trendsRouter.router)
+app.include_router(posts_router.router)
+app.include_router(links_router.router)
+app.include_router(tags_router.router)
 
 
 @app.get("/")
