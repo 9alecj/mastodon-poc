@@ -1,5 +1,5 @@
 from .fixtures.trends_fixture import sample_trends_json_fail, sample_trends_json_success
-from src.utilities import TrendsParser
+from src.utilities import MastodonTagsParser
 from src.viewmodels import TrendViewModel
 import pytest
 from fastapi import HTTPException
@@ -10,7 +10,7 @@ def test_trends_parser_success():
     sample_trend_data = []
     sample_trend_data.append(TrendViewModel("Fensterfreitag"))
     sample_trend_data.append(TrendViewModel("WindowFriday"))
-    trends_parser = TrendsParser()
+    trends_parser = MastodonTagsParser()
 
     # act
     parsed_trends = trends_parser.parse(sample_trends_json_success())
@@ -22,7 +22,7 @@ def test_trends_parser_success():
 
 def test_trends_parser_fail():
     # arrange 
-    trends_parser = TrendsParser()
+    trends_parser = MastodonTagsParser()
 
     #assert
     with pytest.raises(HTTPException):
