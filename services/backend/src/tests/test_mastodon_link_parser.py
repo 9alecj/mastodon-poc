@@ -1,4 +1,4 @@
-from .fixtures.links_fixture import expected_links_success, sample_links_json_fail, sample_links_json_success
+from .fixtures.mastodon_links_fixture import expected_links_success, sample_links_json_fail, sample_links_json_success
 from src.utilities import MastodonLinksParser
 import pytest
 from fastapi import HTTPException
