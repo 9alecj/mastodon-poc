@@ -1,4 +1,4 @@
-from .fixtures.trends_fixture import sample_trends_json_fail, sample_trends_json_success
+from .fixtures.mastodon_trends_fixture import sample_trends_json_fail, sample_trends_json_success
 from src.utilities import MastodonTagsParser
 from src.viewmodels import TrendViewModel
 import pytest
