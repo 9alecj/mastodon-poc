@@ -4,13 +4,13 @@
             <div class="col-4 profile">
                 <img :src=post.profile_photo class="rounded float-left" alt="profile photo" style="width: 80px;">
             </div>
-            <div class="col-4" style="text-align: top;">
-                {{
-                    post.username
-                }}
-            </div>
-            <div class="col-4">
-                {{ timeSince(Date.parse(post.post_time)) }}
+            <div class="col-8" style="text-align: top;">
+                <div>
+                    {{
+                        post.username
+                    }}
+                </div>
+                <div style="color:gray" v-html="post.name"></div>
             </div>
         </div>
         <div class="row content-row">
@@ -19,6 +19,14 @@
             </div>
         </div>
         <div class="row content-row">
+            <div class="col-8" style="text-align: left; color:gray">
+                <span>Posted from: {{ post.application }}</span>
+            </div>
+            <div class="col-4" style="text-align: left;">
+                {{ timeSince(Date.parse(post.post_time)) }}
+            </div>
+        </div>
+        <div v-if="post.application=='mastodon'" class="row content-row">
             <div class="col-4">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                     class="bi bi-reply-fill" viewBox="0 0 24 24">
