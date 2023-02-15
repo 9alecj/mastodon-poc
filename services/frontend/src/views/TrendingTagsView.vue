@@ -3,7 +3,7 @@
         <h1 class="display-3">Trending Tags</h1>
         <div class="d-grid gap-2 d-md-flex justify-content-center">
             <template v-for="tag in tags" :key="tag.name">
-                <button class="btn btn-secondary" @click="updateStatuses(tag.name)" type="button">#{{
+                <button class="btn btn-secondary" @click="updatePosts(tag.name)" type="button">#{{
                     tag.name
                 }}</button>
             </template>
@@ -11,7 +11,7 @@
         <div v-if=posts>
             <h1 class="display-6">#{{ tag }}</h1>
             <masonry :cols="{ default: 3, 1400: 2, 1000: 1 }" :gutter="{ default: '30px' }">
-                <StatusDisplayCard v-for="post in posts" :key="post.id" :post="post"></StatusDisplayCard>
+                <PostDisplayCard v-for="post in posts" :key="post.id" :post="post"></PostDisplayCard>
             </masonry>
         </div>
     </div>
@@ -19,7 +19,7 @@
 
 <script>
 import axios from 'axios';
-import StatusDisplayCard from '@/components/cards/StatusDisplayCard.vue';
+import PostDisplayCard from '@/components/cards/PostDisplayCard.vue';
 
 export default {
     name: 'TrendingTagsView',
@@ -40,7 +40,7 @@ export default {
                     console.error(error);
                 });
         },
-        updateStatuses(tag) {
+        updatePosts(tag) {
             if (tag) {
                 axios.get("/posts/tag", { params: { tag: tag } })
                     .then((res) => {
@@ -61,6 +61,6 @@ export default {
     created() {
         this.getData();
     },
-    components: { StatusDisplayCard }
+    components: { PostDisplayCard }
 }
 </script>

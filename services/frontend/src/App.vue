@@ -5,16 +5,16 @@
       <div class="collapse navbar-collapse d-flex justify-content-center" id="collapsibleNavbar">
         <ul class="navbar-nav">
           <li class="nav-item px-3">
-            <a class="nav-link" href="/">Public</a>
+            <a class="nav-link" href="/">Public Posts</a>
           </li>
           <li class="nav-item px-3">
-            <a class="nav-link" href="/trending-statuses">Trending</a>
+            <a class="nav-link" href="/trending-posts">Trending Posts</a>
           </li>
           <li class="nav-item px-3">
             <a class="nav-link" href="/trending-links">Trending Links</a>
           </li>
           <li class="nav-item px-3">
-            <a class="nav-link" href="/trends">Trends</a>
+            <a class="nav-link" href="/trending-tags">Trending Tags</a>
           </li>
         </ul>
       </div>

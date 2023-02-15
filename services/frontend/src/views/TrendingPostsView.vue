@@ -1,18 +1,18 @@
 <template>
     <div class="container">
-        <h1 class="display-3">Trending Statuses</h1>
+        <h1 class="display-3">Trending Posts</h1>
         <masonry :cols="{ default: 3, 1400: 2, 1000: 1 }" :gutter="{ default: '30px' }">
-            <StatusDisplayCard v-for="post in posts" :key="post.id" :post="post"></StatusDisplayCard>
+            <PostDisplayCard v-for="post in posts" :key="post.id" :post="post"></PostDisplayCard>
         </masonry>
     </div>
 </template>
 
 <script>
 import axios from 'axios';
-import StatusDisplayCard from '@/components/cards/StatusDisplayCard.vue';
+import PostDisplayCard from '@/components/cards/PostDisplayCard.vue';
 
 export default {
-    name: 'TrendingStatusesView',
+    name: 'TrendingPostsView',
     data() {
         return {
             posts: "",
@@ -32,6 +32,6 @@ export default {
     created() {
         this.getData();
     },
-    components: { StatusDisplayCard }
+    components: { PostDisplayCard }
 }
 </script>

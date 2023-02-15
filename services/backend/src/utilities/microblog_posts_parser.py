@@ -31,11 +31,12 @@ class MicroblogPostsParser():
                     replies_count=None,
                     reblogs_count=None,
                     favourites_count=None,
-                    application="micro.blog"
+                    application="micro.blog",
+                    url=post["url"]
                 )
                 data.append(item)
             return data
         except Exception as e:
             print(e)
             raise HTTPException(
-                status_code=500, detail="error parsing data from service")
+                status_code=500, detail="error parsing data from service: " + str(e))

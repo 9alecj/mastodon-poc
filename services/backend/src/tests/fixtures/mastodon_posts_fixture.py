@@ -15,7 +15,9 @@ def expected_posts_success():
         replies_count=12,
         reblogs_count=753,
         favourites_count=1111,
-        application="mastodon"))
+        application="mastodon",
+        url="https://mastodon.social/@Some_Emo_Chick/109761844504564708")
+        )
     sample_post_data.append(PostViewModel(
                             profile_photo="https://files.mastodon.social/accounts/avatars/000/276/336/original/a2fc430ff065be26.jpg",
                             id="109762190140654574",
@@ -27,7 +29,8 @@ def expected_posts_success():
                             replies_count=37,
                             reblogs_count=320,
                             favourites_count=432,
-                            application="mastodon"))
+                            application="mastodon",
+                            url="https://mastodon.social/@lizzard/109762190140654574"))
     return sample_post_data
 
 

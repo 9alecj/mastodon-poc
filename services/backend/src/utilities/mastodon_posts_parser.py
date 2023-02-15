@@ -18,11 +18,12 @@ class MastodonPostsParser():
                     replies_count=post["replies_count"],
                     reblogs_count=post["reblogs_count"],
                     favourites_count=post["favourites_count"],
-                    application="mastodon"
+                    application="mastodon",
+                    url=post["url"]
                 )
                 data.append(item)
             return data
         except Exception as e:
             print(e)
             raise HTTPException(
-                status_code=500, detail="error parsing data from service")
+                status_code=500, detail="error parsing data from service: " + str(e))
