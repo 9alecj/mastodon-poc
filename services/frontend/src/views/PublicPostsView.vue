@@ -1,15 +1,15 @@
 <template>
   <div class="container">
-    <h1 class="display-3">Latest Public Statuses</h1>
+    <h1 class="display-3">Latest Public Posts</h1>
     <masonry :cols="{ default: 3, 1400: 2, 1000: 1 }" :gutter="{ default: '30px' }">
-      <StatusDisplayCard v-for="post in posts" :key="post.id" :post="post"></StatusDisplayCard>
+      <PostDisplayCard v-for="post in posts" :key="post.id" :post="post"></PostDisplayCard>
     </masonry>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
-import StatusDisplayCard from '@/components/cards/StatusDisplayCard.vue';
+import PostDisplayCard from '@/components/cards/PostDisplayCard.vue';
 
 export default {
   name: 'PublicTimelineView',
@@ -33,7 +33,7 @@ export default {
     this.getData();
   },
   components: {
-    StatusDisplayCard
+    PostDisplayCard
   }
 }
 </script>

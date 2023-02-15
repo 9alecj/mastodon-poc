@@ -1,5 +1,5 @@
 <template>
-    <div class="card grid-item">
+    <div class="card grid-item" @click="openInNewTab(post.url)">
         <div class="row content-row">
             <div class="col-4 profile">
                 <img :src=post.profile_photo class="rounded float-left" alt="profile photo" style="width: 80px;">
@@ -63,6 +63,9 @@ export default {
         console.log(this.post)
     },
     methods: {
+        openInNewTab(url) {
+            window.open(url, '_blank', 'noreferrer');
+        },
         timeSince: function (date) {
             var seconds = Math.floor((new Date() - date) / 1000);
             var interval = seconds / 31536000;

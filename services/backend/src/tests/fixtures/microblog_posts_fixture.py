@@ -14,7 +14,8 @@ def expected_posts_success():
         replies_count=None,
         reblogs_count=None,
         favourites_count=None,
-        application="micro.blog"))
+        application="micro.blog",
+        url="https://www.notesonattentionpaid.com/2023/02/14/inspired-by-a.html"))
     sample_post_data.append(PostViewModel(
                             profile_photo="https://avatars.micro.blog/avatars/2023/02/131.jpg",
                             id="16997071",
@@ -26,7 +27,8 @@ def expected_posts_success():
                             replies_count=None,
                             reblogs_count=None,
                             favourites_count=None,
-                            application="micro.blog"))
+                            application="micro.blog",
+                            url="https://baty.social/@jack/109863729915144541"))
     return sample_post_data
 
 

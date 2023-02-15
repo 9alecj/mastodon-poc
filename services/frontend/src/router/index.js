@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import PublicTimelineView from '../views/PublicTimelineView.vue'
-import TrendingStatusesView from '../views/TrendingStatusesView.vue'
+import PublicTimelineView from '../views/PublicPostsView.vue'
+import TrendingPostsView from '../views/TrendingPostsView.vue'
 import TrendingLinksView from '../views/TrendingLinksView.vue'
 import TrendingTagsView from '../views/TrendingTagsView.vue'
 
@@ -12,9 +12,9 @@ const routes = [
     component: PublicTimelineView
   },
   {
-    path: '/trending-statuses',
-    name: 'trending-statuses',
-    component: TrendingStatusesView
+    path: '/trending-posts',
+    name: 'trending-posts',
+    component: TrendingPostsView
   },
   {
     path: '/trending-links',
@@ -22,7 +22,7 @@ const routes = [
     component: TrendingLinksView
   },
   {
-    path: '/trends',
+    path: '/trending-tags',
     name: 'trending-tags',
     component: TrendingTagsView
   }
