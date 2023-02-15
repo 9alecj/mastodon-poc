@@ -1,5 +1,5 @@
 from .fixtures.links_fixture import expected_links_success, sample_links_json_fail, sample_links_json_success
-from src.utilities import LinksParser
+from src.utilities import MastodonLinksParser
 import pytest
 from fastapi import HTTPException
 
@@ -7,7 +7,7 @@ from fastapi import HTTPException
 def test_link_parser_success():
     # arrange
     expected = expected_links_success()
-    links_parser = LinksParser()
+    links_parser = MastodonLinksParser()
 
     # act
     parsed_links = links_parser.parse(sample_links_json_success())
@@ -19,7 +19,7 @@ def test_link_parser_success():
 
 def test_link_parser_fail():
     # arrange
-    links_parser = LinksParser()
+    links_parser = MastodonLinksParser()
 
     # assert
     with pytest.raises(HTTPException):
